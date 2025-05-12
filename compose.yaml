@@ -1,13 +1,33 @@
+version: '3.8'
+
 services:
-  mongodb:
-    image: 'mongo:latest'
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mongo
     environment:
-      - 'MONGO_INITDB_DATABASE=mydatabase'
-      - 'MONGO_INITDB_ROOT_PASSWORD=secret'
-      - 'MONGO_INITDB_ROOT_USERNAME=root'
+      SPRING_DATA_MONGODB_HOST: mongo
+      SPRING_DATA_MONGODB_PORT: 27017
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    restart: always
+    volumes:
+      - bd-mongodb:/data/db
+    environment:
+      MONGO_INITDB_ROOT_PASSWORD: myfluveny
+      MONGO_INITDB_ROOT_USERNAME: root
     ports:
-      - '27017'
+      - 27017:27017
+
   redis:
     image: 'redis:latest'
     ports:
       - '6379'
+
+volumes:
+  bd-mongodb:
