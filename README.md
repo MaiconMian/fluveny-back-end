@@ -7,7 +7,6 @@ Repositório destinado ao desenvolvimento do back-end da aplicação **Fluveny**
 Certifique-se de ter as seguintes ferramentas instaladas na sua máquina:
 
 - **JDK 21** ou superior
-- **Maven 3.9.9**
 - **Docker-Compose**
 
 ## Como Rodar a Aplicação
