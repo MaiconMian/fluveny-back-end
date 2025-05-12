@@ -22,7 +22,8 @@ Execute o seguinte comando no terminal, na raiz do projeto:
 
 ```
 
-Windows
+### Windows
+
 Execute o seguinte comando no Poweshell, na raiz do projeto:
 ```
 ./run.ps1
@@ -30,7 +31,7 @@ Execute o seguinte comando no Poweshell, na raiz do projeto:
 
 Ambos os comandos irão buildar o jar com maven, subir os conteineres e iniciar a aplicação.
 
-### Acesso
+## Acesso
 O acesso do banco de dados se dá pela URL:
 ```
 mongodb://root:myfluveny@mongo:27017/fluvenydb?authSource=admin&authMechanism=SCRAM-SHA-256
